@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ten sam fragment na każdym etapie pipeline'u" width="1120" height="760" viewBox="0 0 1120 760">
+  <defs>
+    <style>
+      .t    { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; }
+      .h1   { font-size: 26px; font-weight: 700; fill: #1f2328; }
+      .sub  { font-size: 14px; fill: #57606a; }
+      .card { fill: #ffffff; stroke: #d0d7de; stroke-width: 1.5; }
+      .stage{ font-size: 13px; font-weight: 700; fill: #ffffff; }
+      .file { font-size: 13px; font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; fill: #57606a; }
+      .code { font-size: 15px; font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; fill: #1f2328; }
+      .name { fill: #8250df; font-weight: 700; }
+      .q    { fill: #cf222e; font-weight: 700; }
+      .tag  { fill: #9a6700; font-weight: 700; }
+    </style>
+  </defs>
+
+  <rect width="1120" height="760" fill="#ffffff"/>
+  <text x="40" y="50" class="t h1">Ten sam fragment na każdym etapie</text>
+  <text x="40" y="74" class="t sub">Przykład z <tspan class="code" font-size="13">examples/demo-series/</tspan> — uruchom bramki i zobacz, że zmienia się tylko to, co ma się zmienić.</text>
+
+  <!-- 1 -->
+  <rect x="40" y="100" width="1040" height="104" rx="10" class="card"/>
+  <rect x="40" y="100" width="6" height="104" rx="3" fill="#0969da"/>
+  <rect x="60" y="114" width="212" height="24" rx="12" fill="#0969da"/>
+  <text x="76" y="131" class="t stage">① EKSTRAKCJA</text>
+  <text x="286" y="131" class="t file">DemoBook.txt — mówcy jako ???</text>
+  <text x="64" y="168" class="t code"><tspan class="q">???</tspan>: [You're late again.]</text>
+  <text x="64" y="192" class="t code"><tspan class="q">???</tspan>: [I know. The train was stuck between two tunnels.]</text>
+
+  <!-- 2 -->
+  <rect x="40" y="224" width="1040" height="104" rx="10" class="card"/>
+  <rect x="40" y="224" width="6" height="104" rx="3" fill="#8250df"/>
+  <rect x="60" y="238" width="212" height="24" rx="12" fill="#8250df"/>
+  <text x="76" y="255" class="t stage">② ROZWIĄZANIE MÓWCÓW</text>
+  <text x="286" y="255" class="t file">DemoBook-resolved.txt — tylko prefiks się zmienia</text>
+  <text x="64" y="292" class="t code"><tspan class="name">Momo</tspan>: [You're late again.]</text>
+  <text x="64" y="316" class="t code"><tspan class="name">Rei</tspan>: [I know. The train was stuck between two tunnels.]</text>
+
+  <!-- 3 -->
+  <rect x="40" y="348" width="1040" height="104" rx="10" class="card"/>
+  <rect x="40" y="348" width="6" height="104" rx="3" fill="#9a6700"/>
+  <rect x="60" y="362" width="212" height="24" rx="12" fill="#9a6700"/>
+  <text x="76" y="379" class="t stage">③ TAGI EMOCJI</text>
+  <text x="286" y="379" class="t file">DemoBook-resolved-tagged.txt — jeden &lt;&lt;tag&gt;&gt; po [</text>
+  <text x="64" y="416" class="t code"><tspan class="name">Momo</tspan>: [<tspan class="tag">&lt;&lt;Calling out across the platform, light and teasing&gt;&gt;</tspan> You're late again.]</text>
+  <text x="64" y="440" class="t code"><tspan class="name">Rei</tspan>: [<tspan class="tag">&lt;&lt;Answering with a flat and tired voice&gt;&gt;</tspan> I know. The train was stuck between two tunnels.]</text>
+
+  <!-- 4 -->
+  <rect x="40" y="472" width="1040" height="104" rx="10" class="card"/>
+  <rect x="40" y="472" width="6" height="104" rx="3" fill="#1a7f37"/>
+  <rect x="60" y="486" width="248" height="24" rx="12" fill="#1a7f37"/>
+  <text x="76" y="503" class="t stage">④ POLONIZACJA (opcja)</text>
+  <text x="322" y="503" class="t file">…-plnames.txt — Rei → Rej (fonetyka PL)</text>
+  <text x="64" y="540" class="t code"><tspan class="name">Momo</tspan>: [<tspan class="tag">&lt;&lt;Calling out across the platform, light and teasing&gt;&gt;</tspan> You're late again.]</text>
+  <text x="64" y="564" class="t code"><tspan class="name">Rej</tspan>: [<tspan class="tag">&lt;&lt;Answering with a flat and tired voice&gt;&gt;</tspan> I know. The train was stuck between two tunnels.]</text>
+
+  <!-- 5 -->
+  <rect x="40" y="596" width="1040" height="104" rx="10" class="card"/>
+  <rect x="40" y="596" width="6" height="104" rx="3" fill="#0a7ea4"/>
+  <rect x="60" y="610" width="212" height="24" rx="12" fill="#0a7ea4"/>
+  <text x="76" y="627" class="t stage">⑤ KOPIA DO CZYTANIA</text>
+  <text x="286" y="627" class="t file">DemoBook-plain.txt — 0 labeli / 0 nawiasów / 0 tagów</text>
+  <text x="64" y="664" class="t code">You're late again.</text>
+  <text x="64" y="688" class="t code">I know. The train was stuck between two tunnels.</text>
+
+  <text x="40" y="736" class="t sub">Wariant „zdanie = linia”: <tspan class="code" font-size="13">plain_sentences.py</tspan> rozbija narrację na osobne zdania i zamyka kwestie w „cudzysłowach”.</text>
+</svg>

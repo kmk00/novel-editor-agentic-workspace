@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Struktura repozytorium NOVEL EDITOR" width="1120" height="600" viewBox="0 0 1120 600">
+  <defs>
+    <style>
+      .t    { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; }
+      .h1   { font-size: 26px; font-weight: 700; fill: #1f2328; }
+      .sub  { font-size: 14px; fill: #57606a; }
+      .ct   { font-size: 15px; font-weight: 700; fill: #1f2328; }
+      .ci   { font-size: 12.5px; fill: #57606a; }
+      .mono { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; font-size: 12.5px; fill: #1f2328; }
+      .card { fill: #ffffff; stroke: #d0d7de; stroke-width: 1.5; }
+    </style>
+  </defs>
+
+  <rect width="1120" height="600" fill="#ffffff"/>
+  <text x="40" y="50" class="t h1">Struktura repozytorium</text>
+  <text x="40" y="74" class="t sub">Nagłówki = katalogi/pliki. <tspan class="mono">tools/</tspan> trzyma całą logikę — skille jej nie duplikują.</text>
+
+  <!-- spine -->
+  <line x1="60" y1="100" x2="1060" y2="100" stroke="#d8dee4" stroke-width="2"/>
+  <g stroke="#d8dee4" stroke-width="2">
+    <line x1="165" y1="100" x2="165" y2="116"/>
+    <line x1="435" y1="100" x2="435" y2="116"/>
+    <line x1="705" y1="100" x2="705" y2="116"/>
+    <line x1="975" y1="100" x2="975" y2="116"/>
+    <line x1="165" y1="306" x2="165" y2="326"/>
+    <line x1="435" y1="306" x2="435" y2="326"/>
+    <line x1="705" y1="306" x2="705" y2="326"/>
+    <line x1="975" y1="306" x2="975" y2="326"/>
+  </g>
+  <circle cx="560" cy="100" r="5" fill="#57606a"/>
+  <text x="560" y="94" class="t ct" text-anchor="middle">NOVEL EDITOR/</text>
+
+  <!-- row 1 -->
+  <g>
+    <rect x="40" y="116" width="250" height="190" rx="10" class="card"/>
+    <rect x="40" y="116" width="250" height="6" rx="3" fill="#0969da"/>
+    <text x="60" y="150" class="t ct">docs/</text>
+    <text x="60" y="176" class="t ci">PIPELINE.md — workflow</text>
+    <text x="60" y="194" class="t ci">CONVENTIONS.md — formaty</text>
+    <text x="60" y="212" class="t ci">VOICES.md — casting</text>
+    <text x="60" y="230" class="t ci">SKILLS.md — skill → artefakt</text>
+    <text x="60" y="248" class="t ci">STATS.md — log serii</text>
+    <text x="60" y="266" class="t ci">assets/ — diagramy (SVG)</text>
+    <text x="60" y="284" class="t mono">characters.template.yaml</text>
+  </g>
+
+  <g>
+    <rect x="310" y="116" width="250" height="190" rx="10" class="card"/>
+    <rect x="310" y="116" width="250" height="6" rx="3" fill="#57606a"/>
+    <text x="330" y="150" class="t ct">tools/</text>
+    <text x="330" y="176" class="t mono">pdf_to_txt.py · epub_to_txt.py</text>
+    <text x="330" y="194" class="t mono">resolve_names.py</text>
+    <text x="330" y="212" class="t mono">emotion_tagger.py</text>
+    <text x="330" y="230" class="t mono">check_coverage.py · tag_qa.py</text>
+    <text x="330" y="248" class="t mono">plain_text.py · plain_sentences.py</text>
+    <text x="330" y="266" class="t mono">polonize_*.py · glossary_build.py</text>
+    <text x="330" y="284" class="t mono">fix_errors.py · voice_casting.py</text>
+  </g>
+
+  <g>
+    <rect x="580" y="116" width="250" height="190" rx="10" class="card"/>
+    <rect x="580" y="116" width="250" height="6" rx="3" fill="#8250df"/>
+    <text x="600" y="150" class="t ct">.pi/</text>
+    <text x="600" y="176" class="t mono">skills/ln-*/SKILL.md</text>
+    <text x="600" y="194" class="t ci">12 skilli: instrukcje + bramki</text>
+    <text x="600" y="218" class="t mono">prompts/*.md</text>
+    <text x="600" y="236" class="t ci">5 komend /ln-... i /generate-...</text>
+  </g>
+
+  <g>
+    <rect x="850" y="116" width="250" height="190" rx="10" class="card"/>
+    <rect x="850" y="116" width="250" height="6" rx="3" fill="#1a7f37"/>
+    <text x="870" y="150" class="t ct">series/ &lt;slug&gt;/</text>
+    <text x="870" y="176" class="t mono">characters.yaml</text>
+    <text x="870" y="194" class="t mono">polonize.yaml</text>
+    <text x="870" y="212" class="t mono">stats.md</text>
+    <text x="870" y="236" class="t mono">VOLxx/  ← jeden katalog na tom</text>
+    <text x="870" y="254" class="t ci">źródło + wszystkie artefakty tomu</text>
+  </g>
+
+  <!-- row 2 -->
+  <g>
+    <rect x="40" y="326" width="250" height="190" rx="10" class="card"/>
+    <rect x="40" y="326" width="250" height="6" rx="3" fill="#bf8700"/>
+    <text x="60" y="360" class="t ct">examples/</text>
+    <text x="60" y="386" class="t ci">demo-series/ — mały, kompletny tom</text>
+    <text x="60" y="410" class="t mono">VOL01/DemoBook.txt</text>
+    <text x="60" y="428" class="t mono">…-resolved.txt</text>
+    <text x="60" y="446" class="t mono">…-resolved-tagged.txt</text>
+    <text x="60" y="464" class="t mono">…-plain.txt</text>
+    <text x="60" y="488" class="t ci">każda bramka przechodzi lokalnie</text>
+  </g>
+
+  <g>
+    <rect x="310" y="326" width="250" height="190" rx="10" class="card"/>
+    <rect x="310" y="326" width="250" height="6" rx="3" fill="#cf222e"/>
+    <text x="330" y="360" class="t ct">translator/</text>
+    <text x="330" y="386" class="t mono">ln-translator/</text>
+    <text x="330" y="404" class="t ci">silnik EN→PL (osobne repo git)</text>
+    <text x="330" y="428" class="t mono">transcript/</text>
+    <text x="330" y="446" class="t ci">whisper / transkrypcje (osobne)</text>
+    <text x="330" y="470" class="t mono">workspace/</text>
+    <text x="330" y="488" class="t ci">robocze katalogi tłumaczeń</text>
+  </g>
+
+  <g>
+    <rect x="580" y="326" width="250" height="190" rx="10" class="card"/>
+    <rect x="580" y="326" width="250" height="6" rx="3" fill="#1f2328"/>
+    <text x="600" y="360" class="t ct">AGENTS.md</text>
+    <text x="600" y="386" class="t ci">Kontrakt agenta: cel, struktura,</text>
+    <text x="600" y="404" class="t ci">twarde reguły, bramki jakości.</text>
+    <text x="600" y="428" class="t ci">Czytaj jako pierwszy.</text>
+  </g>
+
+  <g>
+    <rect x="850" y="326" width="250" height="190" rx="10" class="card"/>
+    <rect x="850" y="326" width="250" height="6" rx="3" fill="#0a7ea4"/>
+    <text x="870" y="360" class="t ct">README.md</text>
+    <text x="870" y="386" class="t ci">Przegląd dla człowieka:</text>
+    <text x="870" y="404" class="t ci">szybki start, pipeline,</text>
+    <text x="870" y="422" class="t ci">przykłady, tabela narzędzi,</text>
+    <text x="870" y="440" class="t ci">bramki, FAQ.</text>
+  </g>
+
+  <text x="40" y="556" class="t ci">Legenda:  <tspan class="mono">mono</tspan> = nazwy plików/katalogów   ·   <tspan class="mono">katalog/</tspan> = katalog   ·   kolorowy pasek = rola danego elementu</text>
+  <text x="40" y="578" class="t ci">Wszystkie komendy uruchamiane z katalogu głównego: <tspan class="mono">python3 tools/&lt;skrypt&gt;.py …</tspan></text>
+</svg>

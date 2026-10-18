@@ -1,0 +1,81 @@
+# ══════════════════════════════════════════════════════════════════════════
+# NOVEL EDITOR — .gitignore (root całego środowiska)
+# --------------------------------------------------------------------------
+# WERSJONOWANE:   docs/ · tools/ · .pi/ (skille + prompty) · examples/
+#                 series/ (dane serii) · README.md · AGENTS.md
+#                 translator/README.md
+# NIE WERSJONOWANE: translator/<podprojekty> (osobne repo / dane robocze),
+#                 wirtualne środowiska, sekrety, artefakty odtwarzalne,
+#                 wyjścia audio/TTS, źródła książek (duże binaria)
+# ══════════════════════════════════════════════════════════════════════════
+
+# ── Python ────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+build/
+dist/
+
+# ── Wirtualne środowiska ─────────────────────────────────────────────────
+.venv/
+venv/
+env/
+
+# ── Edytory / system ─────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*~
+
+# ── LibreOffice / Office (pliki blokad) ──────────────────────────────────
+.~lock.*#
+~$*
+
+# ── Sekrety / konfiguracja lokalna ───────────────────────────────────────
+# Klucze API w plaintekście leżą w: translator/ln-translator/.env,
+# translator/ln-translator/prompt.yaml, translator/workspace/*/config.yaml.
+# Całe translator/ jest wykluczone niżej — te wpisy to dodatkowa siatka.
+.env
+.env.*
+!.env.example
+prompt.yaml
+*.local.yaml
+
+# ── Artefakty pipeline'u (odtwarzalne) ───────────────────────────────────
+*.cache.json
+*_chunks/
+
+# ── Wyjścia audio / TTS (duże, odtwarzalne) ──────────────────────────────
+*.mp3
+*.wav
+*.m4a
+*.flac
+*.ogg
+*.opus
+*.aac
+*.srt
+*.vtt
+
+# ── Źródła książek (duże binaria) ─────────────────────────────────────────
+# Oryginały zostają lokalnie. Wyjątek można dopisać ręcznie, np.:
+#   !series/**/VOL*/*.pdf
+*.pdf
+*.epub
+*.mobi
+*.azw3
+
+# ── translator/ — dwa zagnieżdżone repozytoria git + dane robocze ────────
+# ln-translator/  → własne zdalne repo (github.com/kmk00/ln-translator)
+# transcript/     → osobne lokalne repo (Whisper: audio/wideo → txt/srt/vtt)
+# workspace/      → dane robocze tłumaczenia (config/context/glossary/names/
+#                   chapters/output) + klucze API w config.yaml
+# Dodane „jak leci” weszłyby jako gitlink (pusty wskaźnik), a nie jako pliki.
+# Zostawiamy tylko translator/README.md — indeks komponentów.
+translator/ln-translator/
+translator/transcript/
+translator/workspace/

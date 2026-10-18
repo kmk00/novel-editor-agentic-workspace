@@ -1,0 +1,23 @@
+# Cast manifest template — copy to `series/<slug>/characters.yaml`
+#
+# ONE shared manifest per SERIES (not per volume): all books in `series/<slug>/`
+# use the same file. Write it in ENGLISH (registers/aliases/notes), except the
+# `polonize` fields, which are the target Polish phonetic forms.
+#
+# Canonical speaker keys MUST match the labels used in the chapter text
+# (`Shin: [ ... ]` -> key `Shin`). Aliases cover given names / nicknames /
+# callsigns / variants. `polonize` is the EN→PL phonetic form for Polish TTS.
+# `register` is a short English vocal baseline used as context when writing
+# emotion tags. Voices are assigned manually in the external TTS app — no
+# voice/sample here.
+
+series: <slug>
+
+narrator:
+  register: "calm, literary, medium pace"
+
+characters:
+  Example:
+    polonize: Egzampl
+    aliases: [Ex, The Example]
+    register: "short English description of the character's voice and delivery"

@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bramki jakości w NOVEL EDITOR" width="1120" height="580" viewBox="0 0 1120 580">
+  <defs>
+    <style>
+      .t    { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; }
+      .h1   { font-size: 26px; font-weight: 700; fill: #1f2328; }
+      .sub  { font-size: 14px; fill: #57606a; }
+      .th   { font-size: 13px; font-weight: 700; fill: #57606a; letter-spacing: .04em; }
+      .cell { font-size: 14.5px; font-weight: 600; fill: #1f2328; }
+      .mono { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; font-size: 13px; fill: #0969da; }
+      .ok   { font-size: 13px; font-weight: 700; fill: #1a7f37; }
+      .row  { fill: #ffffff; stroke: #eaeef2; }
+      .badge{ fill: #eaf7ee; stroke: #2da44e; }
+    </style>
+  </defs>
+
+  <rect width="1120" height="580" fill="#ffffff"/>
+  <text x="40" y="50" class="t h1">Bramki jakości — nie wolno ich pominąć</text>
+  <text x="40" y="74" class="t sub">Nigdy nie prezentuj wyniku bez <tspan class="ok">PASS</tspan>/<tspan class="ok">OK</tspan> na wszystkich istotnych bramkach. Kod wyjścia <tspan class="mono">0</tspan> = zaliczone.</text>
+
+  <!-- header -->
+  <text x="60"  y="118" class="t th">BRAMKA</text>
+  <text x="360" y="118" class="t th">KOMENDA (z katalogu głównego)</text>
+  <text x="985" y="118" class="t th">WARUNEK</text>
+  <line x1="40" y1="130" x2="1080" y2="130" stroke="#d8dee4" stroke-width="2"/>
+
+  <!-- rows -->
+  <g>
+    <rect x="40" y="140" width="1040" height="52" rx="8" class="row"/>
+    <text x="60"  y="172" class="t cell">Pokrycie linii po tagowaniu</text>
+    <text x="360" y="172" class="mono">python3 tools/check_coverage.py &lt;orig&gt; &lt;tagged&gt;</text>
+    <rect x="960" y="152" width="94" height="28" rx="14" class="badge"/>
+    <text x="1007" y="171" class="t ok" text-anchor="middle">PASS</text>
+  </g>
+  <g>
+    <rect x="40" y="200" width="1040" height="52" rx="8" class="row"/>
+    <text x="60"  y="232" class="t cell">Reguły tagowania</text>
+    <text x="360" y="232" class="mono">python3 tools/tag_qa.py &lt;tagged&gt;</text>
+    <rect x="960" y="212" width="94" height="28" rx="14" class="badge"/>
+    <text x="1007" y="231" class="t ok" text-anchor="middle">PASS</text>
+  </g>
+  <g>
+    <rect x="40" y="260" width="1040" height="52" rx="8" class="row"/>
+    <text x="60"  y="292" class="t cell">Rozwiązanie mówców</text>
+    <text x="360" y="292" class="mono">python3 tools/resolve_names.py --check &lt;orig&gt; &lt;resolved&gt;</text>
+    <rect x="960" y="272" width="94" height="28" rx="14" class="badge"/>
+    <text x="1007" y="291" class="t ok" text-anchor="middle">PASS</text>
+  </g>
+  <g>
+    <rect x="40" y="320" width="1040" height="52" rx="8" class="row"/>
+    <text x="60"  y="352" class="t cell">Kompletność obsady</text>
+    <text x="360" y="352" class="mono">python3 tools/voice_casting.py &lt;rozdział&gt; [characters.yaml]</text>
+    <rect x="960" y="332" width="94" height="28" rx="14" class="badge"/>
+    <text x="1007" y="351" class="t ok" text-anchor="middle">PASS</text>
+  </g>
+  <g>
+    <rect x="40" y="380" width="1040" height="52" rx="8" class="row"/>
+    <text x="60"  y="412" class="t cell">Plain bez nawiasów i ???</text>
+    <text x="360" y="412" class="mono">python3 tools/plain_sentences.py --check &lt;plain&gt;</text>
+    <rect x="960" y="392" width="94" height="28" rx="14" class="badge"/>
+    <text x="1007" y="411" class="t ok" text-anchor="middle">PASS</text>
+  </g>
+  <g>
+    <rect x="40" y="440" width="1040" height="52" rx="8" class="row"/>
+    <text x="60"  y="472" class="t cell">Glossary EN→PL</text>
+    <text x="360" y="472" class="mono">python3 tools/glossary_build.py check &lt;glossary.md&gt;</text>
+    <rect x="960" y="452" width="94" height="28" rx="14" class="badge"/>
+    <text x="1007" y="471" class="t ok" text-anchor="middle">PASS</text>
+  </g>
+  <g>
+    <rect x="40" y="500" width="1040" height="52" rx="8" class="row"/>
+    <text x="60"  y="532" class="t cell">Spójność chunków tłumaczenia</text>
+    <text x="360" y="532" class="mono">python3 tools/fix_errors.py verify &lt;output&gt;</text>
+    <rect x="960" y="512" width="94" height="28" rx="14" class="badge"/>
+    <text x="1007" y="531" class="t ok" text-anchor="middle">OK</text>
+  </g>
+
+  <text x="40" y="574" class="t sub">Pełna tabela i przykłady wyników: <tspan class="mono">docs/SKILLS.md</tspan> §14 oraz <tspan class="mono">examples/README.md</tspan>.</text>
+</svg>

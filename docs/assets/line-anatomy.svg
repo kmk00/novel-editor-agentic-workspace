@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Anatomia kanonicznej linii dialogu" width="1120" height="620" viewBox="0 0 1120 620">
+  <defs>
+    <style>
+      .t     { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; }
+      .h1    { font-size: 26px; font-weight: 700; fill: #1f2328; }
+      .sub   { font-size: 14px; fill: #57606a; }
+      .mono  { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; }
+      .code  { font-size: 26px; }
+      .code-sm{ font-size: 17px; }
+      .name  { fill: #8250df; font-weight: 700; }
+      .brk   { fill: #1a7f37; font-weight: 700; }
+      .tag   { fill: #9a6700; font-weight: 700; }
+      .spk   { fill: #1f2328; }
+      .cap   { font-size: 14.5px; font-weight: 700; fill: #1f2328; }
+      .capn  { font-size: 13.5px; fill: #57606a; }
+      .num   { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+               font-size: 13px; font-weight: 700; fill: #ffffff; text-anchor: middle; }
+      .lead  { stroke: #b6bfc9; stroke-width: 1.5; stroke-dasharray: 3 3; }
+    </style>
+  </defs>
+
+  <rect width="1120" height="620" fill="#ffffff"/>
+  <text x="40" y="50" class="t h1">Anatomia kanonicznej linii dialogu</text>
+  <text x="40" y="74" class="t sub">Jeden format wszędzie — reszta pliku to narracja bez tagów.</text>
+
+  <!-- the line -->
+  <rect x="40" y="120" width="1040" height="120" rx="12" fill="#f6f8fa" stroke="#d0d7de"/>
+  <text x="120" y="195" class="t mono code"><tspan class="name">Rei:</tspan> <tspan class="brk">[</tspan><tspan class="tag">&lt;&lt;Answering flatly, tired&gt;&gt;</tspan> <tspan class="spk">I know.</tspan><tspan class="brk">]</tspan></text>
+
+  <!-- markers above the line -->
+  <g>
+    <line x1="146" y1="104" x2="146" y2="152" class="lead"/>
+    <circle cx="146" cy="96" r="13" fill="#8250df"/>
+    <text x="146" y="101" class="num">1</text>
+
+    <line x1="196" y1="104" x2="196" y2="152" class="lead"/>
+    <circle cx="196" cy="96" r="13" fill="#1a7f37"/>
+    <text x="196" y="101" class="num">2</text>
+
+    <line x1="405" y1="104" x2="405" y2="152" class="lead"/>
+    <circle cx="405" cy="96" r="13" fill="#9a6700"/>
+    <text x="405" y="101" class="num">3</text>
+
+    <line x1="600" y1="104" x2="600" y2="152" class="lead"/>
+    <circle cx="600" cy="96" r="13" fill="#1f2328"/>
+    <text x="600" y="101" class="num">4</text>
+
+    <line x1="706" y1="104" x2="706" y2="152" class="lead"/>
+    <circle cx="706" cy="96" r="13" fill="#1a7f37"/>
+    <text x="706" y="101" class="num">5</text>
+  </g>
+
+  <!-- legend -->
+  <g>
+    <circle cx="58" cy="290" r="13" fill="#8250df"/>
+    <text x="58" y="295" class="num">1</text>
+    <text x="84" y="286" class="t cap">Etykieta mówcy</text>
+    <text x="84" y="306" class="t capn">Dokładny klucz z <tspan class="mono" font-size="12.5">characters.yaml</tspan> albo <tspan class="mono" font-size="12.5">???</tspan> przed rozwiązaniem. Nigdy nie zmienia się przy tagowaniu.</text>
+
+    <circle cx="58" cy="344" r="13" fill="#1a7f37"/>
+    <text x="58" y="349" class="num">2</text>
+    <text x="84" y="340" class="t cap">Nawias kwestii <tspan class="mono" font-size="12.5">[ ]</tspan></text>
+    <text x="84" y="360" class="t capn">Wszystko, co mówione, jest w nawiasach kwadratowych; narracja ich nie ma.</text>
+
+    <circle cx="58" cy="398" r="13" fill="#9a6700"/>
+    <text x="58" y="403" class="num">3</text>
+    <text x="84" y="394" class="t cap">Tag emocji — zaraz po <tspan class="mono" font-size="12.5">[</tspan></text>
+    <text x="84" y="414" class="t capn">Jeden na linię, po angielsku, reżyseria wykonania (nie abstrakcyjna emocja). Bez słów-efektów dźwiękowych.</text>
+
+    <circle cx="58" cy="452" r="13" fill="#1f2328"/>
+    <text x="58" y="457" class="num">4</text>
+    <text x="84" y="448" class="t cap">Treść kwestii</text>
+    <text x="84" y="468" class="t capn">Byte-identical względem oryginału; każde zdanie kończy się znakiem terminalnym ( <tspan class="mono" font-size="12.5">. ? ! …</tspan> ).</text>
+
+    <circle cx="58" cy="506" r="13" fill="#1a7f37"/>
+    <text x="58" y="511" class="num">5</text>
+    <text x="84" y="502" class="t cap">Zamknięcie kwestii <tspan class="mono" font-size="12.5">]</tspan></text>
+    <text x="84" y="522" class="t capn">Po nim nic już nie stoi w tej samej linii.</text>
+  </g>
+
+  <!-- narration example -->
+  <rect x="40" y="548" width="1040" height="56" rx="12" fill="#ffffff" stroke="#d8dee4" stroke-dasharray="6 4"/>
+  <text x="64" y="572" class="t cap">Narracja — linia bez <tspan class="mono" font-size="12.5">Etykieta: [...]</tspan> — NIGDY nie dostaje tagów</text>
+  <text x="64" y="594" class="t mono code-sm">A puddle shivered under the streetlight.</text>
+</svg>

@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="NOVEL EDITOR — pipeline od PDF/EPUB do audiobooka" width="1160" height="880" viewBox="0 0 1160 880">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#57606a"/>
+    </marker>
+    <marker id="arrow-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#bf8700"/>
+    </marker>
+    <style>
+      .t   { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; }
+      .h1  { font-size: 30px; font-weight: 700; fill: #1f2328; }
+      .sub { font-size: 15px; fill: #57606a; }
+      .lbl { font-size: 17px; font-weight: 600; fill: #1f2328; }
+      .cmd { font-size: 14px; font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; fill: #57606a; }
+      .file{ font-size: 14px; font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; fill: #0969da; }
+      .gate{ font-size: 14px; font-weight: 600; fill: #9a6700; }
+      .note{ font-size: 13px; fill: #57606a; }
+      .box { fill: #ffffff; stroke: #d0d7de; stroke-width: 1.5; rx: 10; }
+    </style>
+  </defs>
+
+  <rect width="1160" height="880" fill="#ffffff"/>
+  <text x="40" y="52" class="t h1">Pipeline — od książki do audiobooka</text>
+  <text x="40" y="76" class="t sub">Deterministyczne skrypty robią mechanikę, agent/LLM rozumie tekst, każdy etap domyka bramka jakości.</text>
+
+  <!-- SOURCE -->
+  <rect x="300" y="100" width="560" height="56" rx="10" fill="#eef6ff" stroke="#7aa7ff" stroke-width="1.5"/>
+  <text x="326" y="135" class="t lbl">① ŹRÓDŁO</text>
+  <text x="560" y="135" class="t cmd">BOOK.pdf  ·  BOOK.epub</text>
+
+  <!-- 2 EXTRACT -->
+  <rect x="300" y="184" width="560" height="56" class="box"/>
+  <rect x="300" y="184" width="6" height="56" rx="3" fill="#0969da"/>
+  <text x="326" y="219" class="t lbl">② Ekstrakcja</text>
+  <text x="520" y="219" class="t cmd">pdf_to_txt.py · epub_to_txt.py</text>
+  <text x="880" y="219" class="t file">→ &lt;stem&gt;.txt</text>
+
+  <!-- 3 RESOLVE -->
+  <rect x="300" y="268" width="560" height="56" class="box"/>
+  <rect x="300" y="268" width="6" height="56" rx="3" fill="#0969da"/>
+  <text x="326" y="303" class="t lbl">③ Rozwiązanie mówców</text>
+  <text x="545" y="303" class="t cmd">resolve_names.py --scan/--check</text>
+  <text x="880" y="303" class="t file">→ -resolved.txt</text>
+
+  <!-- 4 CAST -->
+  <rect x="300" y="352" width="560" height="56" class="box"/>
+  <rect x="300" y="352" width="6" height="56" rx="3" fill="#8250df"/>
+  <text x="326" y="387" class="t lbl">④ Casting</text>
+  <text x="440" y="387" class="t cmd">voice_casting.py</text>
+  <text x="880" y="387" class="t file">→ characters.yaml</text>
+
+  <!-- 5 TAG -->
+  <rect x="300" y="436" width="560" height="56" class="box"/>
+  <rect x="300" y="436" width="6" height="56" rx="3" fill="#8250df"/>
+  <text x="326" y="471" class="t lbl">⑤ Tagowanie emocji</text>
+  <text x="523" y="471" class="t cmd">emotion_tagger.py (Ollama)</text>
+  <text x="880" y="471" class="t file">→ -tagged.txt</text>
+
+  <!-- 6 GATES -->
+  <rect x="300" y="520" width="560" height="56" rx="10" fill="#fff8e6" stroke="#f0b429" stroke-width="1.5"/>
+  <text x="326" y="555" class="t lbl">⑥ Bramki (obowiązkowe)</text>
+  <text x="545" y="555" class="t cmd">check_coverage.py · tag_qa.py</text>
+  <text x="880" y="555" class="t gate">PASS</text>
+
+  <!-- 7 POLONIZE -->
+  <rect x="300" y="604" width="560" height="56" class="box" stroke-dasharray="6 4"/>
+  <rect x="300" y="604" width="6" height="56" rx="3" fill="#bf8700"/>
+  <text x="326" y="639" class="t lbl">⑦ Polonizacja (opcja)</text>
+  <text x="530" y="639" class="t cmd">polonize_scan/apply.py</text>
+  <text x="880" y="639" class="t file">→ polonize.yaml</text>
+
+  <!-- 8 PLAIN -->
+  <rect x="300" y="688" width="560" height="56" class="box"/>
+  <rect x="300" y="688" width="6" height="56" rx="3" fill="#1a7f37"/>
+  <text x="326" y="723" class="t lbl">⑧ Kopia do czytania</text>
+  <text x="510" y="723" class="t cmd">plain_text.py · plain_sentences.py</text>
+  <text x="880" y="723" class="t file">→ -plain.txt</text>
+
+  <!-- 9 TTS -->
+  <rect x="300" y="772" width="560" height="56" rx="10" fill="#eaf7ee" stroke="#2da44e" stroke-width="1.5"/>
+  <text x="326" y="807" class="t lbl">⑨ AUDIOBOOK (TTS)</text>
+  <text x="580" y="807" class="t note">głosy dobierasz ręcznie w zewnętrznej aplikacji</text>
+
+  <!-- arrows -->
+  <g stroke="#57606a" stroke-width="2" marker-end="url(#arrow)" fill="none">
+    <path d="M580,156 L580,182"/>
+    <path d="M580,240 L580,266"/>
+    <path d="M580,324 L580,350"/>
+    <path d="M580,408 L580,434"/>
+    <path d="M580,492 L580,518"/>
+    <path d="M580,576 L580,602"/>
+    <path d="M580,660 L580,686"/>
+    <path d="M580,744 L580,770"/>
+  </g>
+
+  <!-- side notes -->
+  <text x="40" y="216" class="t note">front/back matter</text>
+  <text x="40" y="234" class="t note">usuwany ręcznie</text>
+
+  <text x="40" y="300" class="t note">agent czyta scenę,</text>
+  <text x="40" y="318" class="t note">tylko 100% pewności</text>
+
+  <text x="40" y="474" class="t note">lokalny model,</text>
+  <text x="40" y="492" class="t note">tag po angielsku</text>
+
+  <text x="40" y="638" class="t note">dla polskiego TTS</text>
+
+  <!-- legend -->
+  <line x1="40" y1="856" x2="1120" y2="856" stroke="#d8dee4"/>
+  <rect x="40" y="866" width="12" height="6" rx="3" fill="#0969da"/>
+  <text x="60" y="874" class="t note">skrypty</text>
+  <rect x="150" y="866" width="12" height="6" rx="3" fill="#8250df"/>
+  <text x="170" y="874" class="t note">agent / LLM</text>
+  <rect x="290" y="866" width="12" height="6" rx="3" fill="#bf8700"/>
+  <text x="310" y="874" class="t note">opcjonalne</text>
+  <rect x="420" y="866" width="12" height="6" rx="3" fill="#1a7f37"/>
+  <text x="440" y="874" class="t note">wyjście</text>
+</svg>

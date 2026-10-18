@@ -1,0 +1,20 @@
+# Cast manifest — demo series (see docs/VOICES.md)
+#
+# ONE shared manifest per SERIES. Written in English; only `polonize` holds the
+# Polish phonetic form. Canonical keys MUST match the labels used in the text.
+
+series: demo-series
+
+narrator:
+  register: "calm, literary, medium pace"
+
+characters:
+  Rei:
+    polonize: Rej
+    aliases: [Rei-kun]
+    register: "quiet, guarded, short clipped sentences"
+
+  Momo:
+    polonize: Momo
+    aliases: [Momo-chan]
+    register: "warm, teasing, quick to laugh"

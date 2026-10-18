@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="NOVEL EDITOR" width="1200" height="300" viewBox="0 0 1200 300">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1220"/>
+      <stop offset="55%" stop-color="#131a2b"/>
+      <stop offset="100%" stop-color="#241a35"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7aa7ff"/>
+      <stop offset="50%" stop-color="#b98cff"/>
+      <stop offset="100%" stop-color="#ffd166"/>
+    </linearGradient>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5b6b8a"/>
+    </marker>
+    <style>
+      .t  { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; }
+      .ttl{ font-size: 62px; font-weight: 800; fill: #ffffff; letter-spacing: 1px; }
+      .sub{ font-size: 20px; fill: #b9c2d0; }
+      .sm { font-size: 15px; fill: #8b95a7; font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="300" fill="url(#bg)"/>
+  <rect x="0" y="0" width="1200" height="6" fill="url(#accent)"/>
+
+  <!-- flow glyph on the right -->
+  <g opacity="0.9">
+    <rect x="880" y="60"  width="250" height="32" rx="8" fill="#182036" stroke="#31405f"/>
+    <rect x="880" y="106" width="250" height="32" rx="8" fill="#182036" stroke="#31405f"/>
+    <rect x="880" y="152" width="250" height="32" rx="8" fill="#1c2438" stroke="#4a3a6b"/>
+    <rect x="880" y="198" width="250" height="32" rx="8" fill="#182036" stroke="#31405f"/>
+    <rect x="880" y="244" width="250" height="32" rx="8" fill="#12261b" stroke="#2da44e"/>
+    <g stroke="#5b6b8a" stroke-width="2" marker-end="url(#ar)">
+      <line x1="1005" y1="92"  x2="1005" y2="104"/>
+      <line x1="1005" y1="138" x2="1005" y2="150"/>
+      <line x1="1005" y1="184" x2="1005" y2="196"/>
+      <line x1="1005" y1="230" x2="1005" y2="242"/>
+    </g>
+    <text x="900" y="81"  class="sm" fill="#8fa3c8">PDF / EPUB</text>
+    <text x="900" y="127" class="sm" fill="#8fa3c8">???: [ ... ]</text>
+    <text x="900" y="173" class="sm" fill="#c3a6ff">&lt;&lt;emotion&gt;&gt;</text>
+    <text x="900" y="219" class="sm" fill="#8fa3c8">plain text</text>
+    <text x="900" y="265" class="sm" fill="#8ee0a8">audiobook</text>
+  </g>
+
+  <text x="70" y="128" class="t ttl">NOVEL EDITOR</text>
+  <text x="74" y="172" class="t sub">Light novel / web novel → audiobook z wybranymi postaciami i głosami</text>
+  <text x="74" y="206" class="t sub" font-size="16">ekstrakcja · mówcy · casting · tagi emocji · polonizacja · plain copy · tłumaczenie EN→PL</text>
+
+  <g>
+    <rect x="74" y="232" width="150" height="30" rx="15" fill="#1b2740" stroke="#31405f"/>
+    <text x="149" y="252" class="sm" fill="#9fc0ff" text-anchor="middle">12 skilli</text>
+    <rect x="238" y="232" width="150" height="30" rx="15" fill="#1b2740" stroke="#31405f"/>
+    <text x="313" y="252" class="sm" fill="#c3a6ff" text-anchor="middle">15 skryptów</text>
+    <rect x="402" y="232" width="170" height="30" rx="15" fill="#1b2740" stroke="#31405f"/>
+    <text x="487" y="252" class="sm" fill="#ffd98a" text-anchor="middle">7 bramek PASS/OK</text>
+    <rect x="586" y="232" width="180" height="30" rx="15" fill="#1b2740" stroke="#31405f"/>
+    <text x="676" y="252" class="sm" fill="#8ee0a8" text-anchor="middle">TTS-safe output</text>
+  </g>
+</svg>
